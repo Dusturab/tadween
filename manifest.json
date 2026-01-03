@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Video Notes Extension",
+  "version": "1.0.0",
+  "description": "Extract and take notes from video transcripts on YouTube and other platforms",
+  "permissions": ["activeTab", "storage", "scripting", "alarms"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://youtu.be/*"
+  ],
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*", "https://youtu.be/*"],
+    "js": [
+      "shared/constants.js",
+      "shared/utils.js",
+      "shared/message-types.js",
+      "content/video-detector.js",
+      "content/transcript-extractor.js",
+      "content/content.js"
+    ],
+    "run_at": "document_end"
+  }],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Video Notes",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

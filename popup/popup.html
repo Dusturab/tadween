@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Notes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Video Notes</h1>
+    </header>
+    <main>
+      <div id="video-info" class="section">
+        <h2>Current Video</h2>
+        <p id="video-title">No video detected</p>
+      </div>
+      <div id="transcript-section" class="section">
+        <h2>Transcript</h2>
+        <button id="extract-btn" class="btn primary" disabled>Extract Transcript</button>
+        <div id="transcript-preview"></div>
+      </div>
+      <div id="notes-section" class="section">
+        <h2>Notes</h2>
+        <textarea id="notes-input" placeholder="Add your notes here..."></textarea>
+        <button id="save-notes-btn" class="btn secondary">Save Notes</button>
+      </div>
+      <div id="saved-notes" class="section">
+        <h2>Saved Notes</h2>
+        <ul id="notes-list"></ul>
+      </div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
